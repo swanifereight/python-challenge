@@ -1,25 +1,33 @@
 import os
 import csv
-import datetime
 
-def months_between(start_date, end_date):
+    
+    
+total_months = []
+total_profit = []
+monthly_profit_change = []
 
-    input_file  = os.path.join("python-challenge",'Pybank', 'budget_data.csv')
-if start_date > end_date:
-    raise ValueError(f"Start date {start_date} is not before end date {end_date}")
-    year = start_date.year
-    month = state_date.month
-def input_file(budget_data):{
+csv_path = os.path.join('..','Resources', 'budget_data.csv')
 
+  
 #total months included in the dataset
-    start_date.year = datetime.date(2010, 1)
-    end_date = datetime.date(2017,2)
-    num_months = (end_date.year - start_date.year) * 12 + (end_date.month - start_date.month)
-    print(num_months)}
-  #  total_months = []
-   # total_profit = []
-   # monthly_profit_change = []
+   
+with open(csv_path, "r") as csvfile:
+    csvreader = csv.reader(csvfile,delimiter=',')
+    csv_header = next (csvreader)
+    
+    for row in csvreader:
+       #print(row[0])
+    
+        total_months.append(row[0])
+        total_profit.append(int(row[1]))
+    print(len(total_months))
+    print(sum(total_profit))
+    
+    
+    
 
 #net total amount of Profit/Losses over the entire period
 #greatest_increase = ["",0]
 #greatest_decrease = ['',0]
+
