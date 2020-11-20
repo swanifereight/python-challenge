@@ -26,6 +26,9 @@ with open(csv_path, "r") as csvfile:
 
     max_increase_value = max(monthly_profit_change)
     max_decrease_value = min(monthly_profit_change)
+
+    max_increase_value = max(monthly_profit_change).index(max(monthly_profit_change)) + 1
+    max_decrease_value = min(monthly_profit_change).index(min(monthly_profit_change)) + 1
     
 
 
