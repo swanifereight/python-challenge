@@ -18,8 +18,10 @@ with open(csv_path, "r") as csvfile:
     
         total_months.append(str(row[0]))
         total_profit.append(int(row[1]))
+        monthly_profit_change(int(row[1]))
         print(len(total_months))
         print(sum(total_profit))
+        print(sum(monthly_profit_change))
 
     for x in range(len(total_profit)-1):
         monthly_profit_change.append(total_profit[x+1]-total_profit[x])
@@ -29,7 +31,12 @@ with open(csv_path, "r") as csvfile:
 
     max_increase_value = max(monthly_profit_change).index(max(monthly_profit_change)) + 1
     max_decrease_value = min(monthly_profit_change).index(min(monthly_profit_change)) + 1
-    
+
+    #print statements
+
+    print("Financial Analysis")
+print("-----------------------------")    
+print(f"Total Months: {len(total_months)}")
 
 
     
