@@ -15,9 +15,11 @@ csv_path = os.path.join('..','Resources', 'budget_data.csv')
 with open(csv_path, "r") as csvfile:
     csvreader = csv.reader(csvfile,delimiter=',')
     csv_header = next (csvreader)
+    print(f"Header: {csv_header}")
     
     for row in csvreader:
-       #print(row[0])
+ #net amount of profit and loss     
+ #  #print(row[0])
     
         total_months.append(str(row[0]))
         total_profit.append(int(row[1]))
@@ -30,10 +32,12 @@ with open(csv_path, "r") as csvfile:
 #net total amount of Profit/Losses over the entire period
 total_months = len(total_months)
 profit_loss = 0
-for x in monthly_profit_change:
-    profit_loss = profit_loss + x
+
+profit_loss = profit_loss + x
 
 #greatest_increase = ["",0]
+greatest_increase = max(revenue_change)
 #greatest_decrease = ['',0]
+greatest_decrease = min(revenue_change)
 
 
