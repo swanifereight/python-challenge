@@ -25,6 +25,9 @@ with open(csv_path, "r") as csvfile:
         total_profit.append(int(row[1]))
     print(len(total_months))
     print(sum(total_profit))
+
+    revenue_change = []
+
     
     
     
@@ -32,8 +35,11 @@ with open(csv_path, "r") as csvfile:
 #net total amount of Profit/Losses over the entire period
 total_months = len(total_months)
 profit_loss = 0
+#find revenue change
+for x in range(1, len(total_profit)):
+    revenue_change.append((int(total_profit[x]) - int(total_profit[x-1])))
 
-profit_loss = profit_loss + x
+ revenue_average = sum(revenue_change)/ len(revenue_change)   
 
 #greatest_increase = ["",0]
 greatest_increase = max(revenue_change)
