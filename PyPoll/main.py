@@ -58,13 +58,13 @@ with open(csv_path, 'r') as csvfile:
         
         #print(o_percent)
         
-        if khan_percent > max(correy_percent, li_percent, o_percent):
+    if khan_percent > max(correy_percent, li_percent, o_percent):
             winner = "Khan"
-        elif correy_percent > max(kahn_percent, li_percent, o_percent):
+    elif correy_percent > max(kahn_percent, li_percent, o_percent):
             winner = "Correy"
-        elif li_percent > max(correy_percent, kahn_percent, o_percent):
+    elif li_percent > max(correy_percent, kahn_percent, o_percent):
             winner = "Li"
-        else:
+    else:
             winner = "O'Tooley"
 
 
@@ -77,4 +77,5 @@ print(f"Correy: {correy_percent}% ({candidates_count_Correy})")
 print(f"Li: {li_percent}% ({candidates_count_Li})")
 print(f"O'Tooley: {o_percent}% ({candidates_count_O})")
 print("--------------------")
+print
 
