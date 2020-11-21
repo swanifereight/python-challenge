@@ -2,6 +2,7 @@ import os
 import csv
 
 csv_path = os.path.join( 'Resources', 'election_data.csv')
+pathout = os.path.join( 'Resources', "Election Analysis")
 
 #define
 months = []
@@ -77,5 +78,18 @@ print(f"Correy: {correy_percent}% ({candidates_count_Correy})")
 print(f"Li: {li_percent}% ({candidates_count_Li})")
 print(f"O'Tooley: {o_percent}% ({candidates_count_O})")
 print("--------------------")
-print
+print(f"Winner: {winner}")
 
+
+with open(pathout, "w") as txt_file:
+
+    txt_file.write("Election Results")
+    txt_file.write("--------------------")
+    txt_file.write(f"Total Votes: {count_votes}")
+    txt_file.write("--------------------")
+    txt_file.write  (f"Khan: {khan_percent}% ({candidates_count_Khan})")
+    txt_file.write (f"Correy: {correy_percent}% ({candidates_count_Correy})")
+    txt_file.write (f"Li: {li_percent}% ({candidates_count_Li})")
+    txt_file.write (f"O'Tooley: {o_percent}% ({candidates_count_O})")
+    txt_file.write ("--------------------")
+    txt_file.write(f"Winner: {winner}")
