@@ -9,6 +9,7 @@ candidates = []
 
 
 
+
 count_votes = 0
 
 
@@ -27,8 +28,28 @@ with open(csv_path, 'r') as csvfile:
     #print(count_votes)
     
         candidates.append(row[2])
-        
+ 
+    #print(candidates)
     
     
     
-        
+    candidates_count_Khan = candidates.count("Khan")
+    #candidates.count("Khan")
+    print(candidates_count_Khan)
+    
+    candidates_count_Correy = candidates.count("Correy")
+    #candidates.count("Correy")
+    print(candidates_count_Correy)
+    
+    candidates_count_Li = candidates.count("Li")
+    print(candidates_count_Li)
+    
+    candidates_count_O = candidates.count("O'Tooley")
+    print(candidates_count_O)
+    
+    
+    print((candidates_count_Khan/count_votes) * 100)
+    
+    
+    
+    
