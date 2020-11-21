@@ -49,7 +49,9 @@ with open(csv_path, 'r') as csvfile:
     
     
     print((candidates_count_Khan/count_votes) * 100)
-    
+    print((candidates_count_Li/count_votes) * 100)
+    print((candidates_count_Correy/count_votes) * 100)
+    print((candidates_count_O/count_votes) * 100)
     
     
     
