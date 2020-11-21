@@ -1,7 +1,8 @@
 import os
 import csv
 
-csv_path = os.path.join('..','Resources', 'budget_data.csv')
+csv_path = os.path.join('Resources', 'budget_data.csv')
+pathout = os.path.join('Resources', "Budget Analysis")
 
 #define    
 months = []
@@ -16,7 +17,7 @@ profit_loss_change = 0
 with open(csv_path, "r") as csvfile:
     csvreader = csv.reader(csvfile,delimiter=',')
     csv_header = next (csvreader)
-    print(f"Header: {csv_header}")
+    #print(f"Header: {csv_header}")
     
     for row in csvreader:
 
@@ -44,32 +45,40 @@ lowest_change = min(profit_loss_changes)
 
 highest_month_index = profit_loss_changes.index(highest_change)
 lowest_month_index = profit_loss_changes.index(lowest_change)
-print(highest_month_index)
+#print(highest_month_index)
+
+best_month = months[highest_month_index]
+worst_month = months[lowest_month_index]
 
 
 
-        #total_months.append(row[0])
-        #total_profit.append(int(row[1]))
-       
-        #print(len(months))
-        #print(sum(total_profit))
-        
 
-   #for x in range(len(total_profit)+1):
-       # monthly_profit_change.append(total_profit[x+1]-total_profit[x])
-
-    #max_increase_value = max(monthly_profit_change)
-    #max_decrease_value = min(monthly_profit_change)
-
-    #max_increase_value = max(monthly_profit_change).index(max(monthly_profit_change)) + 1
-    #max_decrease_value = min(monthly_profit_change).index(min(monthly_profit_change)) + 1
 
     
     #print statements
 
-#print("Financial Analysis")
-#print("-----------------------------")    
-#print(f"Total Months: {len(total_months)}")
+print("Financial Analysis")
+print("-----------------------------")    
+print(f"Total Months: {(count_months)}")
+print(f"Total: ${net_profit_loss}")
+print(f"Average Change: ${average_profit_loss}")
+print(f"Greatest Increase in Profits: {best_month} (${highest_change})")
+print(f"Greatest Decrease in Lossses: {worst_month} (${lowest_change})")
+
+
+
+with open(pathout, "w") as txt_file:
+
+    txt_file.write("Financial Analysis")
+    txt_file.write("-----------------------------")
+    txt_file.write(f"Total Months: {(count_months)}")
+    txt_file.write(f"Total: ${net_profit_loss}")
+    txt_file.write(f"Average Change: ${average_profit_loss}")
+    txt_file.write(f"Greatest Increase in Profits: {best_month} (${highest_change})")
+    txt_file.write(f"Greatest Decrease in Lossses: {worst_month} (${lowest_change})")
+
+
+
 
 
     
