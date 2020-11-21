@@ -20,7 +20,7 @@ with open(csv_path, 'r') as csvfile:
     print(f"Header: {csv_header}")
     print(csvreader)
 
-    #for row in csvreader:
+   
     
     for row in csvreader:
         count_votes += 1
@@ -47,14 +47,15 @@ with open(csv_path, 'r') as csvfile:
     candidates_count_O = candidates.count("O'Tooley")
     #print(candidates_count_O)
     
-    khan_percent = format(((candidates_count_Khan/count_votes) * 100), '.3f')
-    print(khan_percent)
-  
-    li_percent = format(((candidates_count_Li/count_votes) * 100), '.3f')
-    print(li_percent)
-    #print((candidates_count_Correy/count_votes) * 100)
-    
-    #print((candidates_count_O/count_votes) * 100)
-    
-    
-     
+    for item in candidates:
+            khan_percent = format(((candidates_count_Khan/count_votes) * 100), '.3f')
+        #print(khan_percent)
+            li_percent = format(((candidates_count_Li/count_votes) * 100), '.3f')
+        #print(li_percent)
+            correy_percent = format(((candidates_count_Correy/count_votes) * 100), '.3f')
+        #print(correy_percent)
+            o_percent = format(((candidates_count_O/count_votes) * 100), '.3f')
+        #print(o_percent)
+
+
+
